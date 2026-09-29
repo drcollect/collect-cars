@@ -15,7 +15,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Space+Grotesk:wght@500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="src/style.css?v=7">
+  <link rel="stylesheet" href="src/style.css?v=18">
   <script type="importmap">
     {
       "imports": {
@@ -35,60 +35,44 @@
   </header>
 
   <aside class="card" aria-live="polite">
-    <h2 id="car-name">Hypercar</h2>
+    <div class="card-head">
+      <h2 id="car-name">Hypercar</h2>
+      <button type="button" id="configure-toggle" class="toggle" aria-expanded="false" aria-controls="look-controls">Configure</button>
+    </div>
     <p id="car-tag" class="tag"></p>
-    <dl class="specs">
-      <div><dt>Length</dt><dd id="spec-length">–</dd></div>
-      <div><dt>Width</dt><dd id="spec-width">–</dd></div>
-      <div><dt>Height</dt><dd id="spec-height">–</dd></div>
-      <div><dt>Triangles</dt><dd id="spec-tris">–</dd></div>
-    </dl>
-    <section class="colorway" aria-label="Colourway">
-      <div class="row">
-        <span class="label">Paint</span>
-        <div id="paint-swatches" class="swatches">
-          <label class="swatch custom" title="Any colour"><input id="paint-custom" type="color" value="#8b9cf9" aria-label="Pick any paint colour"></label>
+    <p id="dims" class="dims"></p>
+    <section class="colorway" aria-label="Configure the car">
+      <p id="look-style" class="look-style"></p>
+      <div id="look-controls">
+        <div class="row"><span class="label">Paint</span><div id="opt-paint" class="swatches"></div></div>
+        <div class="row"><span class="label">Pattern</span><div id="opt-pattern" class="chips"></div></div>
+        <div class="row"><span class="label">Finish</span><div id="opt-finish" class="chips"></div></div>
+        <div class="row"><span class="label">Lights</span><div id="opt-light" class="swatches"></div></div>
+        <div class="row"><span class="label">Wheels</span><div id="opt-wheels" class="swatches"></div></div>
+        <div class="actions">
+          <button type="button" id="random-look" class="primary">Random look</button>
+          <button type="button" id="factory">Factory</button>
         </div>
-      </div>
-      <div class="row">
-        <span class="label">Lights</span>
-        <div id="light-swatches" class="swatches"></div>
-      </div>
-      <div class="row">
-        <span class="label">Finish</span>
-        <div id="finish" class="segmented">
-          <button type="button" data-finish="factory">Factory</button>
-          <button type="button" data-finish="gloss">Gloss</button>
-          <button type="button" data-finish="satin">Satin</button>
-          <button type="button" data-finish="matte">Matte</button>
+        <div id="look-line" class="look" hidden>
+          <span class="label">This is your look</span>
+          <div id="look-what" class="what"></div>
+          <button type="button" id="copy-link">Copy link</button>
         </div>
-      </div>
-      <div class="actions">
-        <button type="button" id="random-drop" class="primary">Random drop</button>
-        <button type="button" id="factory">Reset</button>
-      </div>
-      <div id="drop-line" class="drop" hidden>
-        <div><span class="label">Drop</span> <code id="drop-id"></code></div>
-        <div id="drop-what" class="what"></div>
-        <button type="button" id="copy-link">Copy link</button>
       </div>
     </section>
-    <div class="downloads">
-      <a id="dl-draco" download>GLB · Draco <span></span></a>
-      <a id="dl-full" download>GLB · full <span></span></a>
-    </div>
+    <p class="downloads">Download GLB: <a id="dl-draco" download>Draco <span></span></a> · <a id="dl-full" download>full size <span></span></a></p>
   </aside>
 
   <nav id="switcher" class="switcher" aria-label="Choose a car"></nav>
 
   <footer class="hint">
-    <span>Drag to orbit · scroll to zoom · ← → to switch · R for a random drop · space to pause</span>
+    <span>Drag to orbit · scroll to zoom · ← → to switch · R for a random look · space to pause</span>
     <a href="https://github.com/drcollect/collect-cars">Source &amp; models on GitHub</a>
   </footer>
 
   <div id="loading" class="loading" role="status">Loading…</div>
   <noscript><p class="loading">This 3D viewer needs JavaScript.</p></noscript>
 
-  <script type="module" src="src/main.js?v=7"></script>
+  <script type="module" src="src/main.js?v=18"></script>
 </body>
 </html>

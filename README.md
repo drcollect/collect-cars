@@ -14,11 +14,20 @@ Five concept cars. They were designed with GPT Image 2.5 and built as 3D models 
 | Endurance | 4.90 × 1.97 × 1.32 m | 247,752 | [GLB (Draco, 0.4 MB)](models/endurance.glb) · [GLB (5.0 MB)](models/full/endurance.glb) |
 | Streamliner | 5.20 × 1.63 × 1.29 m | 389,520 | [GLB (Draco, 0.4 MB)](models/streamliner.glb) · [GLB (9.0 MB)](models/full/streamliner.glb) |
 
-## Colourways and random drops
+## Configure the cars
 
-In the viewer you can repaint any car. Pick a paint (Dropper's indigo, violet and coral are in the palette, next to classic car colours, and there's a free colour picker), a colour for the light strips, and a finish (gloss, satin or matte). The tail lights stay red.
+Four of the cars can be configured in the viewer. Each has its own look, set by five traits: paint, pattern, finish, light colour and wheel finish.
 
-**Random drop** (or the R key) mints a colourway the way [Dropper](https://dropper.page) names its shares: 128 bits from the browser's secure random generator, written as 32 hex characters after the car's name. The bytes pick the paint, with its own slight shade so no two drops are alike, plus the lights and the finish. The drop code goes into the link, for example `#hypercar-312f085719f8cbdceebcae3b2eabb5ed`, so the same drop looks identical for everyone who opens it. **Copy link** shares it.
+| Car | Look | Paint | Pattern | Finish | Lights | Wheels |
+|---|---|---|---|---|---|---|
+| Rally-Raid | Solid paints | 16 | 5 | 3 | 6 | 5 |
+| 80s Wedge | Metallic paints | 10 | 6 | 3 | 6 | 5 |
+| Endurance | Pearl paints that shift colour | 8 | 6 | 2 | 6 | 6 |
+| Hypercar | Two-tone paints with chrome trim | 6 | 5 | 3 | 4 | 4 |
+
+The Streamliner is shown in its factory finish. The patterns (stripes, a diagonal split, honeycomb, contour lines, circuit traces and glitch slices) are drawn by a shader on the car's surface, so the models themselves stay unchanged. The wheel finish covers the rims, spokes, discs and caps; the tyres stay rubber, and the tail lights stay red.
+
+**Random look** (or the R key) picks one option per trait. Every look has its own link, for example [`#wedge/3.5.0.1.3`](https://drcollect.github.io/collect-cars/#wedge/3.5.0.1.3) (paint, pattern, finish, lights and wheels, counting from 0). A shared link shows exactly that car, and **Copy link** puts it on the clipboard. A link with only the car's name, such as `#wedge`, shows the factory finish.
 
 ## How they were made
 
