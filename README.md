@@ -2,9 +2,11 @@
 
 Five concept cars. They were designed with GPT Image 2.5 and built as 3D models in Blender with Claude, with no image-to-3D tools involved.
 
-**[→ Open the 3D viewer](https://drcollect.github.io/collect-cars/)**: spin them around in your browser, switch cars, and download the models.
+**[→ Open the 3D viewer](https://drcollect.github.io/collect-cars/)**: spin them around in your browser, switch cars, repaint them, and download the models.
 
-![The five cars in the studio](images/og.jpg)
+[![A 12-second demo of the configurator: picking cars and changing their paint, pattern, lights and wheels](media/configurator-preview.webp)](https://drcollect.github.io/collect-cars/media/configurator.mp4)
+
+▶ **[Watch the demo in full HD](https://drcollect.github.io/collect-cars/media/configurator.mp4)** (12 seconds, [MP4](media/configurator.mp4))
 
 | Car | Size (L × W × H) | Triangles | Download |
 |---|---|---|---|
@@ -38,6 +40,9 @@ The Streamliner is shown in its factory finish. The patterns (stripes, a diagona
 2. **Blueprints.** `gpt-image-2.5-sunburst` turned each pick into an orthographic blueprint at one scale, with side, front, top and rear views.
 3. **Measurement.** A script read the silhouettes straight out of the blueprint pixels: the roofline, the glass, the wheels and the plan shape.
 4. **Blender.** Claude wrote Python scripts that loft each body from those measurements and add the canopy, wheels, light strips, wing, fins, vents and louvres. Each model is checked by drawing its silhouette in red over the blueprint. Four of the cars were built at the same time by parallel Claude subagents.
+
+   ![The five cars in the studio](images/og.jpg)
+
 5. **Export.** The cars were exported as GLB, and Draco compression makes them 5–25 times smaller for the web.
 
 ![Every car from three angles](images/overview.jpg)
