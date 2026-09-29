@@ -32,7 +32,7 @@ The Streamliner is shown in its factory finish. The patterns (stripes, a diagona
 ## How they were made
 
 1. **Concept art.** GPT Image 2.5 produced a design sheet for each car from a text prompt, with several variants per car. Here is the prompt that started it all:
-   > Design a futuristic two-seat electric hypercar: the hero car for a collectible video-game drop. Low wedge shape, very low to the ground, a dark tinted glass canopy pushed far forward, big clean smooth side panels, one thin glowing light bar across the front and one across the back, a slim floating rear wing, and large wheels with covered aero discs. Satin graphite grey paint. Show it as one clean design sheet on a plain white background …
+   > Design a futuristic two-seat electric hypercar… Low wedge shape, very low to the ground, a dark tinted glass canopy pushed far forward, big clean smooth side panels, one thin glowing light bar across the front and one across the back, a slim floating rear wing, and large wheels with covered aero discs. Satin graphite grey paint. Show it as one clean design sheet on a plain white background …
 
    One variant was picked per car. The hypercar is a mix: variant 2's body with variant 5's glowing wheel rings, combined in a single image edit.
 2. **Blueprints.** `gpt-image-2.5-sunburst` turned each pick into an orthographic blueprint at one scale, with side, front, top and rear views.
