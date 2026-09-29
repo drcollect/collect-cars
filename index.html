@@ -15,7 +15,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Space+Grotesk:wght@500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="src/style.css?v=3">
+  <link rel="stylesheet" href="src/style.css?v=7">
   <script type="importmap">
     {
       "imports": {
@@ -43,6 +43,36 @@
       <div><dt>Height</dt><dd id="spec-height">–</dd></div>
       <div><dt>Triangles</dt><dd id="spec-tris">–</dd></div>
     </dl>
+    <section class="colorway" aria-label="Colourway">
+      <div class="row">
+        <span class="label">Paint</span>
+        <div id="paint-swatches" class="swatches">
+          <label class="swatch custom" title="Any colour"><input id="paint-custom" type="color" value="#8b9cf9" aria-label="Pick any paint colour"></label>
+        </div>
+      </div>
+      <div class="row">
+        <span class="label">Lights</span>
+        <div id="light-swatches" class="swatches"></div>
+      </div>
+      <div class="row">
+        <span class="label">Finish</span>
+        <div id="finish" class="segmented">
+          <button type="button" data-finish="factory">Factory</button>
+          <button type="button" data-finish="gloss">Gloss</button>
+          <button type="button" data-finish="satin">Satin</button>
+          <button type="button" data-finish="matte">Matte</button>
+        </div>
+      </div>
+      <div class="actions">
+        <button type="button" id="random-drop" class="primary">Random drop</button>
+        <button type="button" id="factory">Reset</button>
+      </div>
+      <div id="drop-line" class="drop" hidden>
+        <div><span class="label">Drop</span> <code id="drop-id"></code></div>
+        <div id="drop-what" class="what"></div>
+        <button type="button" id="copy-link">Copy link</button>
+      </div>
+    </section>
     <div class="downloads">
       <a id="dl-draco" download>GLB · Draco <span></span></a>
       <a id="dl-full" download>GLB · full <span></span></a>
@@ -52,13 +82,13 @@
   <nav id="switcher" class="switcher" aria-label="Choose a car"></nav>
 
   <footer class="hint">
-    <span>Drag to orbit · scroll to zoom · ← → to switch · space to pause</span>
+    <span>Drag to orbit · scroll to zoom · ← → to switch · R for a random drop · space to pause</span>
     <a href="https://github.com/drcollect/collect-cars">Source &amp; models on GitHub</a>
   </footer>
 
   <div id="loading" class="loading" role="status">Loading…</div>
   <noscript><p class="loading">This 3D viewer needs JavaScript.</p></noscript>
 
-  <script type="module" src="src/main.js?v=3"></script>
+  <script type="module" src="src/main.js?v=7"></script>
 </body>
 </html>

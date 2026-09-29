@@ -54,7 +54,10 @@ h1, h2 { font-family: "Space Grotesk", Inter, sans-serif; font-weight: 600; marg
   position: fixed;
   top: 28px;
   right: 32px;
-  width: 300px;
+  width: 320px;
+  max-height: calc(100vh - 220px);
+  overflow-y: auto;
+  scrollbar-width: none;
   padding: 20px 22px;
   background: var(--glass);
   border: 1px solid var(--line);
@@ -72,6 +75,73 @@ h1, h2 { font-family: "Space Grotesk", Inter, sans-serif; font-weight: 600; marg
 }
 .specs dt { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
 .specs dd { margin: 0; font-family: "Space Grotesk", Inter, sans-serif; font-size: 17px; }
+.card::-webkit-scrollbar { display: none; }
+
+.colorway {
+  margin: 0 0 16px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+  display: grid;
+  gap: 10px;
+}
+.colorway .row { display: grid; grid-template-columns: 52px 1fr; align-items: center; gap: 8px; }
+.label { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+.swatches { display: flex; flex-wrap: wrap; gap: 6px; }
+.swatch {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: var(--c);
+  cursor: pointer;
+  transition: transform 0.15s;
+}
+.swatch:hover { transform: scale(1.15); }
+.swatch[aria-pressed="true"] { box-shadow: 0 0 0 2px var(--bg), 0 0 0 3.5px var(--accent); }
+.swatch:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.swatch.custom {
+  order: 99;
+  background: conic-gradient(#f55, #fd5, #5f8, #5cf, #86f, #f5c, #f55);
+  overflow: hidden;
+}
+.swatch.custom input { position: absolute; inset: 0; opacity: 0; cursor: pointer; width: 100%; height: 100%; }
+.segmented { display: flex; gap: 2px; padding: 2px; border: 1px solid var(--line); border-radius: 999px; width: max-content; }
+.segmented button, .actions button, .drop button {
+  font: 500 12px Inter, system-ui, sans-serif;
+  color: var(--muted);
+  background: transparent;
+  border: 0;
+  border-radius: 999px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+.segmented button[aria-pressed="true"] { color: var(--bg); background: var(--text); }
+.actions { display: flex; gap: 8px; }
+.actions button { border: 1px solid var(--line); padding: 7px 14px; color: var(--text); }
+.actions button:hover, .drop button:hover { border-color: var(--accent); color: var(--accent); }
+.actions .primary {
+  flex: 1;
+  color: #14151a;
+  border-color: transparent;
+  background: linear-gradient(90deg, #8b9cf9, #7a68e7 55%, #f2a5a5);
+  font-weight: 600;
+}
+.actions .primary:hover { color: #14151a; filter: brightness(1.08); }
+.drop {
+  display: grid;
+  gap: 4px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: rgba(139, 156, 249, 0.08);
+  border: 1px solid rgba(139, 156, 249, 0.25);
+}
+.drop[hidden] { display: none; }
+.drop code { font: 12px ui-monospace, "SF Mono", Menlo, monospace; color: var(--accent); }
+.drop .what { font-size: 12px; color: var(--muted); text-transform: capitalize; }
+.drop button { justify-self: start; border: 1px solid var(--line); color: var(--text); padding: 4px 10px; }
+
 .downloads { display: flex; flex-wrap: wrap; gap: 8px; }
 .downloads a, .hint a {
   color: var(--text);
@@ -179,7 +249,10 @@ h1, h2 { font-family: "Space Grotesk", Inter, sans-serif; font-weight: 600; marg
     width: auto;
     padding: 12px 16px;
   }
-  .card .tag, .card .specs div:nth-child(4) { display: none; }
+  .card .tag, .card .specs, .card .downloads, .drop .what { display: none; }
+  .card { max-height: 46vh; }
+  .colorway { margin-bottom: 0; padding-top: 8px; gap: 8px; }
+  .swatches { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; padding: 3px; }
   .card h2 { font-size: 19px; margin-bottom: 8px; }
   .specs { grid-template-columns: repeat(3, 1fr); margin-bottom: 10px; }
   .switcher { bottom: 44px; }

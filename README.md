@@ -14,6 +14,12 @@ Five concept cars. They were designed with GPT Image 2.5 and built as 3D models 
 | Endurance | 4.90 × 1.97 × 1.32 m | 247,752 | [GLB (Draco, 0.4 MB)](models/endurance.glb) · [GLB (5.0 MB)](models/full/endurance.glb) |
 | Streamliner | 5.20 × 1.63 × 1.29 m | 389,520 | [GLB (Draco, 0.4 MB)](models/streamliner.glb) · [GLB (9.0 MB)](models/full/streamliner.glb) |
 
+## Colourways and random drops
+
+In the viewer you can repaint any car. Pick a paint (Dropper's indigo, violet and coral are in the palette, next to classic car colours, and there's a free colour picker), a colour for the light strips, and a finish (gloss, satin or matte). The tail lights stay red.
+
+**Random drop** (or the R key) mints a colourway the way [Dropper](https://dropper.page) names its shares: 128 bits from the browser's secure random generator, written as 32 hex characters after the car's name. The bytes pick the paint, with its own slight shade so no two drops are alike, plus the lights and the finish. The drop code goes into the link, for example `#hypercar-312f085719f8cbdceebcae3b2eabb5ed`, so the same drop looks identical for everyone who opens it. **Copy link** shares it.
+
 ## How they were made
 
 1. **Concept art.** GPT Image 2.5 produced a design sheet for each car from a text prompt, with several variants per car. Here is the prompt that started it all:
