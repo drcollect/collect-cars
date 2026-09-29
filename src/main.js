@@ -142,7 +142,7 @@ renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 renderer.toneMapping = THREE.NeutralToneMapping;
 renderer.toneMappingExposure = 1.3;
 renderer.shadowMap.enabled = true;
-renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+renderer.shadowMap.type = THREE.PCFShadowMap;
 
 const scene = new THREE.Scene();
 scene.background = new THREE.Color(BG);
@@ -761,9 +761,7 @@ addEventListener("resize", resize);
 resize();
 
 // --- loop ---------------------------------------------------------------------------------------------
-const clock = new THREE.Clock();
-renderer.setAnimationLoop(() => {
-  const dt = Math.min(clock.getDelta(), 0.1);
+function tick(dt) {
   if (goal.time > 0) {                             // glide to the new car's framing
     goal.time -= dt;
     const k = 1 - Math.exp(-dt * 3.5);
@@ -780,6 +778,12 @@ renderer.setAnimationLoop(() => {
   }
   controls.update(dt);
   renderFrame();
+}
+let lastTime = null;
+renderer.setAnimationLoop((time) => {
+  const dt = lastTime === null ? 0 : Math.min((time - lastTime) / 1000, 0.1);
+  lastTime = time;
+  tick(dt);
 });
 
 const initial = parseHash();
@@ -797,6 +801,8 @@ if (new URLSearchParams(location.search).has("debug")) {
     setLook: (look) => setLook(CARS[currentIndex].id, look),
     get loaded() { return Boolean(current) && request > 0; },
     get current() { return current; },
+    pause() { renderer.setAnimationLoop(null); },    // then step(dt) renders frame by frame, e.g. to record
+    step: tick,
     renderer,
     THREE,
     camera,
