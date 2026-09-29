@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Collect Cars · five concept cars in 3D</title>
+  <meta name="description" content="Five concept cars, designed with GPT Image 2.5 and built as 3D models in Blender with Claude. Spin them around right in your browser.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Collect Cars · five concept cars in 3D">
+  <meta property="og:description" content="Designed with GPT Image 2.5, built in Blender with Claude. Spin them around right in your browser.">
+  <meta property="og:image" content="https://drcollect.github.io/collect-cars/images/og.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://drcollect.github.io/collect-cars/images/og.jpg">
+  <meta name="theme-color" content="#07080a">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Space+Grotesk:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="src/style.css?v=3">
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.186.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.186.0/examples/jsm/"
+      }
+    }
+  </script>
+</head>
+<body>
+  <canvas id="scene" aria-label="3D view of the selected car. Drag to orbit, scroll to zoom."></canvas>
+
+  <header class="brand">
+    <p class="overline">Collect</p>
+    <h1>Concept Cars</h1>
+    <p class="lede">Five concept cars, designed with GPT&nbsp;Image&nbsp;2.5 and built in Blender with Claude.</p>
+  </header>
+
+  <aside class="card" aria-live="polite">
+    <h2 id="car-name">Hypercar</h2>
+    <p id="car-tag" class="tag"></p>
+    <dl class="specs">
+      <div><dt>Length</dt><dd id="spec-length">–</dd></div>
+      <div><dt>Width</dt><dd id="spec-width">–</dd></div>
+      <div><dt>Height</dt><dd id="spec-height">–</dd></div>
+      <div><dt>Triangles</dt><dd id="spec-tris">–</dd></div>
+    </dl>
+    <div class="downloads">
+      <a id="dl-draco" download>GLB · Draco <span></span></a>
+      <a id="dl-full" download>GLB · full <span></span></a>
+    </div>
+  </aside>
+
+  <nav id="switcher" class="switcher" aria-label="Choose a car"></nav>
+
+  <footer class="hint">
+    <span>Drag to orbit · scroll to zoom · ← → to switch · space to pause</span>
+    <a href="https://github.com/drcollect/collect-cars">Source &amp; models on GitHub</a>
+  </footer>
+
+  <div id="loading" class="loading" role="status">Loading…</div>
+  <noscript><p class="loading">This 3D viewer needs JavaScript.</p></noscript>
+
+  <script type="module" src="src/main.js?v=3"></script>
+</body>
+</html>
